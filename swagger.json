@@ -1,0 +1,179 @@
+{
+    "swagger": "2.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "BELAJAR SWAGGER",
+      "description": "This is my chance to try out using Swagger as a back-end documentation"
+    },
+    "host": "localhost:3000",
+    "tags": [
+      {
+        "name": "BELAJAR",
+        "description": "API AND CRUD FOR SMALL THINGS"
+      }
+  
+    ],
+    "schemes": [ "http" ],
+    "consumes": [ "application/json" ],
+    "produces": [ "application/json" ],
+    "paths": {
+      "/users": {
+        "get": {
+          "summary": "dokumentasi untuk get user",
+          "tags": [
+            "USERS"
+          ],
+          "description": "get all data users",
+          "produces": [
+            "application/json"
+          ],
+          "responses": {
+            "200": {
+              "description": "success get all data",
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          }
+        },
+        "post": {
+          "summary": "insert new users",
+          "tags": [
+            "USERS"
+          ],
+          "description": "save new data into table",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "body",
+              "name": "body",
+              "description": "USERS Schema",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "Success insert new data",
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          }
+        }
+      },
+      "/users/{id}": {
+        "get": {
+          "summary": "get users data by id",
+          "tags": [
+            "USERS"
+          ],
+          "description": "get user data by id",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "description": "USER id you want to search",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success get all data",
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          }
+        }
+      },
+      "/update/{id}": {
+        "put": {
+          "summary": "update users data by id",
+          "tags": [
+            "USERS"
+          ],
+          "description": "update user data by id",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id", 
+              "description": "USER  you want to update",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success get all data",
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          }
+        }
+      },
+      "/delete/{id}": {
+        "delete": {
+          "summary": "delete users data by id",
+          "tags": [
+            "USERS"
+          ],
+          "description": "delete user data by id",
+          "produces": [
+            "application/json"
+          ],
+          "parameters": [
+            {
+              "in": "path",
+              "name": "id",
+              "description": "USER id you want to delete",
+              "required": false,
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "success get all data",
+              "schema": {
+                "$ref": "#/definitions/users"
+              }
+            }
+          }
+        }
+      }
+    },
+  
+    "definitions": {
+      "users": {
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "integer"
+          },
+          "kelas": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  }
