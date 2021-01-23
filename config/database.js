@@ -7,7 +7,7 @@ const UserModel = require('../model/users')
 
 //database
 //JANGAN DIGANGGU GUGAT
-const sequelize = new Sequelize('belajar', 'postgres', 'Occa1996%', {
+const sequelize = new Sequelize('belajar', 'postgres', 'xxxxxx', {
     host: 'localhost',
     dialect: 'postgres',
   });
